@@ -1,0 +1,155 @@
+div.record-picker {
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 1px solid #ddd;
+	position: relative;
+	cursor: pointer;
+	font-family: sans-serif;
+}
+
+div.record-picker::-webkit-scrollbar {
+	width: 12px;
+}
+
+div.record-picker::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+div.record-picker {
+	scrollbar-base-color: indigo;
+	scrollbar-3dlight-color: indigo;
+	scrollbar-highlight-color: indigo;
+	scrollbar-track-color: #eee;
+	scrollbar-arrow-color: gray;
+	scrollbar-shadow-color: gray;
+	scrollbar-dark-shadow-color: gray;
+}
+
+div.record-picker::-webkit-scrollbar-track {
+	background:#eee;
+	box-shadow: 0px 0px 3px #dfdfdf inset;
+}
+
+div.record-picker::-webkit-scrollbar-thumb {
+	background: indigo;
+	border: thin solid gray;
+}
+
+div.record-picker::-webkit-scrollbar-thumb:hover {
+	background: purple;
+}
+
+.record-picker ul {
+	margin: 0;
+	padding: 0 0 1px 0;
+}
+
+.record-picker li {
+	border-top: thin solid #ddd;
+	border-bottom: 1px solid #ddd;
+	display: block;
+	padding: 2px 2px 2px 10px;
+	margin-bottom: -1px;
+	font-size: 0.85em;
+	cursor: pointer;
+	white-space: nowrap;
+	min-height:16px;
+	text-align: left;
+}
+
+.record-picker li:hover {
+	background-color: #f5f5f5;
+}
+
+.record-picker li.selected {
+	background-color: thistle;
+}
+
+.record-picker li.selected:hover {
+	background-color: plum;
+}
+
+.record-picker li.disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.record-picker li:first-child {
+	border-top: none;
+}
+
+.record-picker li:last-child {
+	border-bottom: none;
+}
+
+.record-picker label {
+	cursor: pointer;
+	font-weight: inherit;
+	font-size: 14px;
+	padding: 4px;
+	margin-bottom: -1px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.record-picker ul.over {
+	background-color:lightgray;
+}
+
+.dual-list {
+	display: flex;
+	flex-direction: row;
+	align-content: flex-start;
+	justify-content: space-evenly;
+	
+}
+
+.dual-list .listbox {
+	width: 35%;
+	margin: 0px;
+	flex-grow: 2;
+}
+
+.buttonbox {
+	margin: 0 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.btn-block {
+	display: block;
+	width: 70px;
+	margin: 4px;
+}
+
+button {
+	color: white;
+	font-size: 18px;
+	background: indigo;
+	padding: 5px 10px;
+	border: solid black 1px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background: purple;
+	text-decoration: none;
+}
+
+button:disabled {
+	background: rgba(75, 0, 130, .5);
+	cursor: default;
+}
+
+p {
+	font-family: sans-serif;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
