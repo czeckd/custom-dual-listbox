@@ -28,7 +28,7 @@ export class CustomListboxComponent extends DualListComponent  {
 	}
 
 
-	// Override funtion in DualListComponent to add custom selectChange event.
+	// Override function in DualListComponent to add custom selectChange event.
 	selectItem(list:Array<any>, item:any) {
 		const pk = list.filter( (e:any) => {
 			return Object.is(e, item);
