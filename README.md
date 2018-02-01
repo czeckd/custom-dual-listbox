@@ -5,5 +5,4 @@ It was built with angular-cli.
 
 This is what the custom-dual-listbox looks like when built:
 
-![Custom Dual ListBox](http://czeckd.github.io/custom-dual-listbox/images/custom.png)
-
+![Custom Dual ListBox](https://raw.githubusercontent.com/czeckd/custom-dual-listbox/master/images/custom.png)
