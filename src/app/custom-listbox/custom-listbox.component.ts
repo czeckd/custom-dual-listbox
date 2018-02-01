@@ -1,5 +1,5 @@
 import { Component, EventEmitter, IterableDiffers, Input, Output } from '@angular/core';
-import { DualListComponent } from 'angular-dual-listbox/dual-list.component';
+import { DualListComponent } from 'angular-dual-listbox';
 
 @Component({
 	selector: 'app-custom-listbox',
