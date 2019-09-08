@@ -6,14 +6,16 @@ import { DualListComponent } from 'angular-dual-listbox';
 	templateUrl: './custom-listbox.component.html',
 	styleUrls: ['./custom-listbox.component.css']
 })
-export class CustomListboxComponent extends DualListComponent  {
+export class CustomListboxComponent extends DualListComponent {
 
 	@Input() sourceName = '';
 	@Input() targetName = '';
+	@Input() lblToolTip = '';
 
 	@Output() selectChange = new EventEmitter();
+	tooltip;
 
-	constructor(differs:IterableDiffers) {
+	constructor(differs: IterableDiffers) {
 		super(differs);
 	}
 
@@ -29,8 +31,8 @@ export class CustomListboxComponent extends DualListComponent  {
 
 
 	// Override function in DualListComponent to add custom selectChange event.
-	selectItem(list:Array<any>, item:any) {
-		const pk = list.filter( (e:any) => {
+	selectItem(list: Array<any>, item: any) {
+		const pk = list.filter((e: any) => {
 			return Object.is(e, item);
 		});
 		if (pk.length > 0) {
@@ -39,13 +41,25 @@ export class CustomListboxComponent extends DualListComponent  {
 				const idx = list.indexOf(pk[i]);
 				if (idx !== -1) {
 					list.splice(idx, 1);
-					this.selectChange.emit( { key: item._id, selected: false });
+					this.selectChange.emit({ key: item._id, selected: false });
 				}
 			}
 		} else {
 			list.push(item);
-			this.selectChange.emit( { key: item._id, selected: true });
+			this.selectChange.emit({ key: item._id, selected: true });
 		}
 	}
 
+	hover(element) {
+		
+		this.source.forEach(sourceElement => {
+			if (sourceElement[this.key] === element._id) {
+				this.tooltip = sourceElement[this.lblToolTip];
+			}
+		});
+		if (!this.tooltip) {
+			this.tooltip = '...'
+		}
+
+	}
 }

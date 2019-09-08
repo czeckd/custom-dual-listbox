@@ -1,6 +1,7 @@
 <div style="text-align:center">
-	<app-custom-listbox [source]="source" [(destination)]="target" height="350px"
+	<app-custom-listbox [source]="sourceCustom" [(destination)]="target" height="350px"
 		(selectChange)="showMessage($event)" sourceName="Available Stations" targetName="Selected Stations"
-		[sort]="true" [compare]="compare"></app-custom-listbox>
+		[sort]="false" lblToolTip="state" [key]="key"  [display]="display"></app-custom-listbox>
 </div>
 <pre>{{message|json}}</pre>
+

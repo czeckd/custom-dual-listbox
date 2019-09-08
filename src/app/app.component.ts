@@ -6,47 +6,48 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-	/* tslint:disable quotemark */
-	static tube:Array<string> = [
-		"Harrow & Wealdstone",
-		"Kenton",
-		"South Kenton",
-		"North Wembley",
-		"Wembley Central",
-		"Stonebridge Park",
-		"Harlesden",
-		"Willesden Junction",
-		"Kensal Green",
-		"Queen's Park",
-		"Kilburn Park",
-		"Maida Vale",
-		"Warwick Avenue",
-		"Paddington",
-		"Edgware Road",
-		"Marylebone",
-		"Baker Street",
-		"Regent's Park",
-		"Oxford Circus",
-		"Piccadilly Circus",
-		"Charing Cross",
-		"Embankment",
-		"Waterloo",
-		"Lambeth North",
-		"Elephant & Castle"
-	];
-	/* tslint:enable quotemark */
-
+	
 	target = [];
+	key = 'id';
+	display = 'station';
+	
+
+	sourceCustom=[
+			{
+				"id": 1,
+				"station": "Antonito",
+				"state": "CO"
+			},
+			{
+				"id": 2,
+				"station": "Big Horn",
+				"state": "NM"
+			},
+			{
+				"id": 3,
+				"station": "Sublette",
+				"state": "NM"
+			},
+			{
+				"id": 4,
+				"station": "Toltec",
+				"state": "NM"
+			},
+			{
+				"id": 5,
+				"station": "Osier",
+				"state": "CO"
+			}
+		]
 
 	message;
-	source = AppComponent.tube;
 
-	compare(a:any, b:any) {
-		const arr = AppComponent.tube;
+	compare(a: any, b: any) {
+		const arr =this.sourceCustom;
 		return arr.indexOf(a._id) - arr.indexOf(b._id);
 	}
 
-	showMessage(e:any) {
+	showMessage(e: any) {
 		this.message = { selectChange: e };
 	}
 }
