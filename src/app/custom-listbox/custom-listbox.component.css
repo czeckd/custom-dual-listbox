@@ -153,3 +153,36 @@ p {
 	font-weight: 600;
 	margin-bottom: 4px;
 }
+
+
+
+  /***************************/
+  .dynamic-tooltip {
+	background-color: #414343;
+	border-color: #faf2cc;
+	color: #ffffff;
+	position: absolute;
+	top:-7px;
+	border-radius: 5px;
+	left: 15%;
+	padding: 0.5rem 1.25rem;
+	display: none;
+	z-index: 1;
+  }
+  .dynamic-tooltip::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #414343 transparent transparent transparent;
+  }
+  li:hover .dynamic-tooltip {
+	display: block;
+  }
+
+  .record-picker li {
+	  position: relative;
+  }
